@@ -1,0 +1,9 @@
+<component name="libraryTable">
+  <library name="habitTracker">
+    <CLASSES>
+      <root url="jar://$PROJECT_DIR$/habitTracker.zip!/" />
+    </CLASSES>
+    <JAVADOC />
+    <SOURCES />
+  </library>
+</component>

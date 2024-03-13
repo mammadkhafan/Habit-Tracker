@@ -14,7 +14,7 @@ public class User {
     public Task createTask() {
         Scanner input = new Scanner(System.in);
         String taskName = input.nextLine();
-        Task task = new Task(taskName);
+        Task task = new Task(taskName , this);
         return task;
     }
 
