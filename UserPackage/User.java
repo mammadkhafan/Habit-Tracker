@@ -1,6 +1,6 @@
 package UserPackage;
 import TaskPackage.Task;
-import java.util.Scanner;
+import UtilityPackage.*;
 
 public class User {
     private String username ;
@@ -11,11 +11,32 @@ public class User {
     public String email ;
     public int streak;
 
-    public Task createTask() {
-        Scanner input = new Scanner(System.in);
-        String taskName = input.nextLine();
-        Task task = new Task(taskName , this);
-        return task;
+    private static Task[] taskSaver = new Task[10];
+    private static int arreyCounter = 0;
+
+    Utils util = new Utils();
+
+    public Task createTask(String name) {
+        if (isTaskRepetitive(name)) {
+            Task task = new Task(name , this);
+            taskSaver[arreyCounter] = task;
+            arreyCounter ++;
+            return task;
+        }
+        else {
+            System.out.println("your task name is repetive");
+            return null;
+        }
+    }
+
+    public boolean isTaskRepetitive(String taskName) {
+        for (int i = 0; i < taskSaver.length; i++) {
+            if (taskSaver[i].name == taskName) {
+                return false;
+            }
+        }
+
+        return true;
     }
 
     public String getFullName() {
@@ -28,7 +49,9 @@ public class User {
     }
 
     public void setPassword (String newPassword) {
-        password = newPassword ;
+        if (util.isPasswordValid(newPassword)) {
+            password = newPassword ;
+        }
     }
 
     public String getUsername () {
