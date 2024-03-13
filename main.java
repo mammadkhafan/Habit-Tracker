@@ -30,9 +30,12 @@ public class Main {
         char answer = scan.next().charAt(0);
         if (answer == 'y'){
             System.out.println("Creating task...");
-            Task task1 = user.createTask();
-            task1.start_time = 18.00;
-            task1.finish_time = 19.30;
+            String name = scan.nextLine();
+            Task task1 = user.createTask(name);
+            System.out.println("Set the start time:");
+            task1.setStartTime(scan.nextDouble());
+            System.out.println("Set the finish time:");
+            task1.setFinishTime(scan.nextDouble());
             DecimalFormat df = new DecimalFormat("##.00");
             System.out.println(task1.name + " duration: " + df.format(task1.getDuration()));
         }

@@ -3,7 +3,7 @@ import UserPackage.*;
 
 
 public class Task {
-    public String name ;
+    public String name;
     private double start_time ;
     private double finish_time ;
     private final String color ;
@@ -46,5 +46,6 @@ public class Task {
         if (time >= 0.0)
             finish_time = time;
     }
+
 }
 
