@@ -11,8 +11,8 @@ public class User {
     public String email ;
     public int streak;
 
-    private static Task[] taskSaver = new Task[10];
-    private static int arreyCounter = 0;
+    private Task[] taskSaver = new Task[10];
+    private int arreyCounter = 0;
 
     Utils util = new Utils();
 

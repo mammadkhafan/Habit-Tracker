@@ -26,7 +26,7 @@ public class Task {
         color = "000000";
     }
 
-    public boolean isColorValid  (String color) {
+    public static boolean isColorValid  (String color) {
         String true_string = "0123456789ABCDEF";
         for (int j = 0; j < color.length(); j++) {
             for (int i = 0; i < true_string.length(); i++) {
