@@ -1,0 +1,18 @@
+Let's break down the pattern:
+
+1. `^` - Matches the start of the string.
+
+2. `[a-zA-Z0-9_+&*-]+` - Matches one or more occurrences of any alphabetic character (both lowercase and uppercase), digits, underscore, plus, ampersand, asterisk, or hyphen.
+ 	This part matches the local part of the email before the '@' symbol.
+
+3. `(?:\\.[a-zA-Z0-9_+&*-]+)*` - Matches zero or more occurrences of a dot followed by one or more occurrences of any alphabetic character (both lowercase and uppercase)
+	digits, underscore, plus, ampersand, asterisk, or hyphen. This part allows for multiple dots in the local part of the email, which is common in some email addresses.
+
+4. `@` - Matches the '@' symbol.
+5. `(?:[a-zA-Z0-9-]+\\.)+` - Matches one or more occurrences of one or more alphabetic characters (both lowercase and uppercase)
+	digits, or hyphens followed by a dot. This part matches the domain name, allowing for subdomains.
+
+6. `[a-zA-Z]{2,7}` - Matches two to seven occurrences of any alphabetic character (both lowercase and uppercase).
+ 	This part matches the top-level domain (TLD) like ".com", ".org", etc.
+
+7. `$` - Matches the end of the string.

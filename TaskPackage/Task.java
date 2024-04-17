@@ -15,15 +15,23 @@ public class Task {
     }
 
     public Task (String name , String color , User user) {
-        this.name = name ;
+        setName(name);
         this.color = color;
         this.user = user;
     }
 
     public Task (String name , User user) {
-        this.name = name ;
+        setName(name);
         this.user = user;
         color = "000000";
+    }
+
+    public void setName(String name) {
+        if (name.length() > 10) {
+            System.out.println("name is too long");
+        }
+        else
+            this.name = name;
     }
 
     public static boolean isColorValid  (String color) {
